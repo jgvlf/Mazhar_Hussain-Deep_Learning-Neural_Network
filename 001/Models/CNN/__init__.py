@@ -60,4 +60,8 @@ class CNN(nn.Module):
 
         return x
 
+    def get_summary(self):
+        from torchsummary import summary
+        return summary(self, (3, 32, 32))
+
 
