@@ -1,2 +1,4 @@
+from Models import CNN
 if __name__ == '__main__':
-    pass
+    model = CNN()
+    print(model)
