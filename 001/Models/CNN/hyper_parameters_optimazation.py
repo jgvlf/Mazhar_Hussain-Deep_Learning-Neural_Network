@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 class HyperParametersOptimization:
     def __init__(self) -> None:
-        self.loss_function = self.define_loss_function()
+        self.criterion = self.define_loss_function()
         self.optimizer = self.define_optimizer()
 
     @abstractmethod

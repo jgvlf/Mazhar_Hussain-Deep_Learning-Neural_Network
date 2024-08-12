@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 import torchvision
-from torchvision import datasets, transforms
+from torchvision import transforms
 from .augmentation import Augmentation
 from .classes import classes
 

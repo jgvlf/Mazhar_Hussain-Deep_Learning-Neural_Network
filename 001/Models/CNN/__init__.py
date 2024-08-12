@@ -82,5 +82,3 @@ class CNN(Module, HyperParametersOptimization):
     def get_summary(self) -> ModelStatistics:
         from torchsummary import summary
         return summary(self, (3, 32, 32))
-
-
