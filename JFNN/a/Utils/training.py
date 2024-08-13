@@ -1,5 +1,5 @@
-from Data import Dataset
-from Models.CNN import device
+from JFNN.a.Data import Dataset
+from JFNN.a.Models.CNN import device
 from torch.nn import Module
 
 import torch

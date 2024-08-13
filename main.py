@@ -1,6 +1,6 @@
-from Models import CNN
-from Data import Dataset
-from Utils import Training
+from JFNN.a.Models import CNN
+from JFNN.a.Data import Dataset
+from JFNN.a.Utils import Training
 if __name__ == '__main__':
     model = CNN()
     print(model)
