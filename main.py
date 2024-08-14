@@ -1,13 +1,9 @@
-from JFNN.a.Models import CNN
-from JFNN.a.Data import Dataset
-from JFNN.a.Utils import Training
+from JFNN.a.exe import LixCNN
 if __name__ == '__main__':
-    model = CNN()
+    model = LixCNN()
     print(model)
     print(model.get_summary())
-    dataset = Dataset()
-    train = Training(model, dataset)
-    print(f"Trainset lenght: {len(dataset.trainset)}")
-    print(f"Testset lenght: {len(dataset.testset)}")
-
-    train.train(10)
+    print(f"Trainset lenght: {model.dataset_size()[0]}")
+    print(f"Testset lenght: {model.dataset_size()[1]}")
+    model.train_model(10)
+    model.test_model()
