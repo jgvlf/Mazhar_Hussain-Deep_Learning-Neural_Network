@@ -4,18 +4,20 @@ from torch.nn import Module
 
 import torch
 
+from typing import Literal
+
 
 class Training:
     def __init__(self, model: Module, dataset: Dataset):
         self.dataset = dataset
         self.model = model
-        self.train_loss = 0  # Initialize training loss accumulator for the epoch
-        self.train_acc = 0  # Initialize training accuracy accumulator for the
+        self.train_loss: float = 0.0  # Initialize training loss accumulator for the epoch
+        self.train_acc: float = 0.0  # Initialize training accuracy accumulator for the
 
     def train(self, epochs: int):
         for epoch in range(epochs):
-            self.train_loss = 0
-            self.train_acc = 0
+            self.train_loss = 0.0
+            self.train_acc = 0.0
 
             self.model.train()
 
@@ -43,7 +45,6 @@ class Training:
                 # true labels
 
                 # Compute accuracy by comparing predictions with true labels
-
             self.train_loss /= i + 1  # Calculate average training loss for the epoch
             self.train_acc /= i + 1  # Calculate average training accuracy for the epoch
 

@@ -7,6 +7,8 @@ import cv2
 import matplotlib.pyplot as plt   # Import Matplotlib library for visualization
 import seaborn as sns   # Import Seaborn library for enhanced visualization
 
+from typing import Any
+
 from JFNN.a.core.Data import Dataset
 from JFNN.a.core.Models.CNN import device
 
@@ -15,8 +17,8 @@ class Evaluation:
         self.model = model
         self.datasets = datasets
         self.model.eval() # Set the model to evaluation mode
-        self.all_preds = list() # Initialize an empty list to store all predictions
-        self.all_labels = list() # Initialize an empty list to store all true labels
+        self.all_preds: list[Any] = list()# Initialize an empty list to store all predictions
+        self.all_labels: list[Any] = list() # Initialize an empty list to store all true labels
         self.__iterate_test_dataset()
     
     # Iterate over the test dataset

@@ -24,7 +24,7 @@ class LixCNN(CNN):
         self.__testing = Testing(self, self.__dataset)
 
     def __create_training_method_instance(self) -> None:
-        self.__training: Training = Training(self, self.__dataset)
+        self.__training = Training(self, self.__dataset)
 
     def __create_evaluation_instance(self):
         self.__evaluation = Evaluation(self, self.__dataset)
@@ -33,16 +33,16 @@ class LixCNN(CNN):
         return self.__dataset.trainset_size(), self.__dataset.testset_size()
 
     def train_model(self, epochs: int = 10) -> None:
-        self.__training.train(epochs)
+        self.__training.train(epochs) if self.__training else None
 
     def test_model(self) -> None:
-        self.__testing.test()
+        self.__testing.test() if self.__testing else None
 
     def confusion_matrix(self, show: bool, save: bool):
-        self.__evaluation.confusion_matrix(show, save)
+        self.__evaluation.confusion_matrix(show, save) if self.__evaluation else None
 
     def seaborn_confusion_matrix(self, show: bool, save: bool):
-        self.__evaluation.seaborn_confusion_matrix(show, save)
+        self.__evaluation.seaborn_confusion_matrix(show, save) if self.__evaluation else None
 
     def classification_report(self):
         self.__evaluation.class_report()

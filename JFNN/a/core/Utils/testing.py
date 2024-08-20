@@ -4,7 +4,7 @@ from JFNN.a.core.Models.CNN import device
 
 
 class Testing:
-    def __init__(self, model, dataset):
+    def __init__(self, model, dataset) -> None:
         self.correct: int = 0
         self.total: int = 0
         self.model = model
