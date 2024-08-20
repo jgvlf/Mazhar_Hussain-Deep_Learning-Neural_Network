@@ -8,5 +8,5 @@ class Augmentation:
         self.transform = transforms.Compose(self.augmentation_techniques())
 
     @abstractmethod
-    def augmentation_techniques(self) -> list[transforms]:
+    def augmentation_techniques(self) -> list:
         pass

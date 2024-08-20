@@ -9,3 +9,6 @@ if __name__ == '__main__':
     print(f"Testset lenght: {model.dataset_size()[1]}")
     model.train_model(10)
     model.test_model()
+    model.confusion_matrix(False, True)
+    model.seaborn_confusion_matrix(False, True)
+    model.classification_report()

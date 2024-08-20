@@ -24,7 +24,7 @@ class Dataset(Augmentation):
             testloader = DataLoader(testset, batch_size=5, shuffle=False, num_workers=2)
             return trainset, trainloader, testset, testloader, classes
 
-    def augmentation_techniques(self) -> list[transforms]:
+    def augmentation_techniques(self) -> list:
         return [transforms.RandomHorizontalFlip(),
                 transforms.RandomRotation(10),
                 transforms.RandomResizedCrop(32, scale=(0.8, 1.0), ratio=(1.0, 1.0)),
